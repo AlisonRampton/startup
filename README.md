@@ -22,3 +22,14 @@ SSH Command: ssh -i [key pair file] ubuntu@[ip address]
 
 # HTTPS
 HTTPS stands for Secure Hypertext Transport Protocol. Data is encrypted using the TLS protocol. The curl command can be used to see the output of the HTTPS exchange. Let's Encrypt creates trusted web certificates for free, and Caddy used Let's Encrypt to generate the web certificate for this project.
+
+# HTML (Hypertext Markup Language)
+HTML provides the foundational content structure that all web applications build upon. HTML elements are represented with enclosing tags.
+| Tags     | Description |
+| -------- | ----------- |
+| ```<p> </p>``` | A structural paragraph of text |
+| ```<html> </html>``` | Represents the top level page structure |
+| ```<head> </head>``` | Contains metadata about the page and page title |
+| ```<title> </title>``` | Page title |
+| ```<body> </body>``` | Represents the content structure |
+| ```<main> </main>``` | Represents the main content structure |
