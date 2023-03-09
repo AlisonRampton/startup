@@ -70,6 +70,7 @@ HTML provides the foundational content structure that all web applications build
 | `video`   | Video content                                                          |
 | `svg`     | Scalable vector graphic content                                        |
 | `iframe`  | Inline frame of another HTML page                                      |
+
 How to use otherwise reserved characters:  
 | Character | Entity      |
 | --------- | ----------- |
