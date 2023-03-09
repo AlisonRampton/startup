@@ -134,3 +134,23 @@ Common input element attributes:
 | disabled  | Disables the ability for the user to interact with the input                        |
 | value     | The initial value of the input                                                      |
 | required  | Signifies that a value is required in order to be valid                             |
+
+img, audio, and video elements use src attribute for source of content.
+
+# CSS (Cascading Style Sheets)
+Converts the structure and content of HTML to build responsive design and style. CSS defines 'rulesets' or 'rules', comprised of a 'selector' that selects the elements to apply the rule to, and one or more 'declarations' that represent the 'property' to style with the given 'property value'.  
+
+Example rule applying to 'p' elements and using 4 declarations:
+```css
+p {
+  font-family: sans-serif;
+  font-size: 2em;
+  color: navy;
+  text-shadow: 3px 3px 1px #cccccc;
+}
+```
+You can define CSS rules within the HTML document by using the HTML 'style' element. Alternatively, you can create a hyperlink reference to an external css file.
+```html
+<link rel="stylesheet" href="styles.css" />
+```
+Rules cascade from highest to lowest nodes in DOM tree, and thus declaration properties defined at a lower level will override higher declarations.
