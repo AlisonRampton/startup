@@ -19,3 +19,6 @@ Board games are a hobby of mine. One of my favorite games to play with larger gr
 Domain: www.fakeartist.click  
 Public/Elastic IPv4 Address: 18.118.243.84  
 SSH Command: ssh -i [key pair file] ubuntu@[ip address]  
+
+# HTTPS
+HTTPS stands for Secure Hypertext Transport Protocol. Data is encrypted using the TLS protocol. The curl command can be used to see the output of the HTTPS exchange. Let's Encrypt creates trusted web certificates for free, and Caddy used Let's Encrypt to generate the web certificate for this project.
