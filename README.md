@@ -14,3 +14,8 @@ Board games are a hobby of mine. One of my favorite games to play with larger gr
 
 # Sketch
 ![mockup of final application](https://github.com/AlisonRampton/startup/blob/main/IMG-0763.jpg?raw=true)
+
+# AWS Info
+Domain: www.fakeartist.click  
+Public/Elastic IPv4 Address: 18.118.243.84  
+SSH Command: ssh -i [key pair file] ubuntu@[ip address]  
