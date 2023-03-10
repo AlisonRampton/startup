@@ -19,6 +19,7 @@ Board games are a hobby of mine. One of my favorite games to play with larger gr
 Domain: www.fakeartist.click  
 Public/Elastic IPv4 Address: 18.118.243.84  
 SSH Command: ssh -i [key pair file] ubuntu@[ip address]  
+We used EC2 for the server, and Route 53 to get the domain.
 
 # HTTPS
 HTTPS stands for Secure Hypertext Transport Protocol. Data is encrypted using the TLS protocol. The curl command can be used to see the output of the HTTPS exchange. Let's Encrypt creates trusted web certificates for free, and Caddy used Let's Encrypt to generate the web certificate for this project.
@@ -153,4 +154,74 @@ You can define CSS rules within the HTML document by using the HTML 'style' elem
 ```html
 <link rel="stylesheet" href="styles.css" />
 ```
-Rules cascade from highest to lowest nodes in DOM tree, and thus declaration properties defined at a lower level will override higher declarations.
+Rules cascade from highest to lowest nodes in DOM tree, and thus declaration properties defined at a lower level will override higher declarations.  
+
+Selectors can be used widely for all elements of a certain type, or you can use combinators to specify necessary descendancy, like so:
+```css
+section h2 {
+  color: #004400;
+}
+```
+
+There are other types of combinators that you can use. These include the following.
+
+| Combinator       | Meaning                    | Example        | Description                                |
+| ---------------- | -------------------------- | -------------- | ------------------------------------------ |
+| Descendant       | A list of descendants      | `body section` | Any section that is a descendant of a body |
+| Child            | A list of direct children  | `section > p`  | Any p that is a direct child of a section  |
+| General sibling  | A list of siblings         | `p ~ div`      | Any p that has a div sibling               |
+| Adjacent sibling | A list of adjacent sibling | `p + div`      | Any p that has an adjacent div sibling     |
+
+You can also use selectors to specify classes of objects (objects with a class atribute).  
+```css
+.summary {
+  font-weight: bold;
+}
+```
+
+You can also combine the element name and class selectors to select all paragraphs with a class of summary.
+
+```css
+p.summary {
+  font-weight: bold;
+}
+```
+You can use a pound sign to select an object with an id.  
+Attribute selectors select elements based on their attributes. You use an attribute selector to select any element with a given attribute (`a[href]`). You can also specify a required value for an attribute (`a[href="./fish.png"]`) in order for the selector to match. Attribute selectors also support wildcards such as the ability to select attribute values containing specific text (`p[href*="https://"]).
+```css
+p[class='summary'] {
+  color: red;
+}
+```
+
+Declarations:
+| Property           | Value                              | Example             | Discussion                                                                     |
+| ------------------ | ---------------------------------- | ------------------- | ------------------------------------------------------------------------------ |
+| background-color   | color                              | `red`               | Fill the background color                                                      |
+| border             | color width style                  | `#fad solid medium` | Sets the border using shorthand where any or all of the values may be provided |
+| border-radius      | unit                               | `50%`               | The size of the border radius                                                  |
+| box-shadow         | x-offset y-offset blu-radius color | `2px 2px 2px gray`  | Creates a shadow                                                               |
+| columns            | number                             | `3`                 | Number of textual columns                                                      |
+| column-rule        | color width style                  | `solid thin black`  | Sets the border used between columns using border shorthand                    |
+| color              | color                              | `rgb(128, 0, 0)`    | Sets the text color                                                            |
+| cursor             | type                               | `grab`              | Sets the cursor to display when hovering over the element                      |
+| display            | type                               | `none`              | Defines how to display the element and its children                            |
+| filter             | filter-function                    | `grayscale(30%)`    | Applies a visual filter                                                        |
+| float              | direction                          | `right`             | Places the element to the left or right in the flow                            |
+| flex               |                                    |                     | Flex layout. Used for responsive design                                        |
+| font               | family size style                  | `Arial 1.2em bold`  | Defines the text font using shorthand                                          |
+| grid               |                                    |                     | Grid layout. Used for responsive design                                        |
+| height             | unit                               | `.25em`             | Sets the height of the box                                                     |
+| margin             | unit                               | `5px 5px 0 0`       | Sets the margin spacing                                                        |
+| max-[width/height] | unit                               | `20%`               | Restricts the width or height to no more than the unit                         |
+| min-[width/height] | unit                               | `10vh`              | Restricts the width or height to no less than the unit                         |
+| opacity            | number                             | `.9`                | Sets how opaque the element is                                                 |
+| overflow           | [visible/hidden/scroll/auto]       | `scroll`            | Defines what happens when the content does not fix in its box                  |
+| position           | [static/relative/absolute/sticky]  | `absolute`          | Defines how the element is positioned in the document                          |
+| padding            | unit                               | `1em 2em`           | Sets the padding spacing                                                       |
+| left               | unit                               | `10rem`             | The horizontal value of a positioned element                                   |
+| text-align         | [start/end/center/justify]         | `end`               | Defines how the text is aligned in the element                                 |
+| top                | unit                               | `50px`              | The vertical value of a positioned element                                     |
+| transform          | transform-function                 | `rotate(0.5turn)`   | Applies a transformation to the element                                        |
+| width              | unit                               | `25vmin`            | Sets the width of the box                                                      |
+| z-index            | number                             | `100`               | Controls the positioning of the element on the z axis                          |
