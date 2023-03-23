@@ -232,3 +232,8 @@ HTML:
 - Semantically different tags for the same functionality are interesting, like menu vs. ul
 - Since I'm getting to this late, I am so glad CSS is a thing because using old HTML for the visual fomatting seems like a pain
 - Not sure why the name entry doesn't work with the code provided?
+CSS:
+- WOW this is a huge visual upgrade
+- Still missing functionality, but I assume we will be implementing that with the Java
+- The Simon game itself is the most visually impressive, but for some reason I am really impressed by the table styling
+- I need to make sure I don't get too lost in the CSS on my startup because I can for sure get lost in trying to make it look pretty
