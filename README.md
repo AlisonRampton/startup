@@ -225,3 +225,10 @@ Declarations:
 | transform          | transform-function                 | `rotate(0.5turn)`   | Applies a transformation to the element                                        |
 | width              | unit                               | `25vmin`            | Sets the width of the box                                                      |
 | z-index            | number                             | `100`               | Controls the positioning of the element on the z axis                          |
+
+
+# Simon Observations
+HTML:
+- Semantically different tags for the same functionality are interesting, like menu vs. ul
+- Since I'm getting to this late, I am so glad CSS is a thing because using old HTML for the visual fomatting seems like a pain
+- Not sure why the name entry doesn't work with the code provided?
