@@ -237,3 +237,8 @@ CSS:
 - Still missing functionality, but I assume we will be implementing that with the Java
 - The Simon game itself is the most visually impressive, but for some reason I am really impressed by the table styling
 - I need to make sure I don't get too lost in the CSS on my startup because I can for sure get lost in trying to make it look pretty
+JS:
+- There's functionality now!
+- I still feel like Javascript is the weird love child of Java and Python that makes less sense than either one
+- I think the main thing throwing me off is using this.element without having to first declare element as a member of the class
+- need to reference the documentation so I know all the style attributes I can manipulate
