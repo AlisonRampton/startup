@@ -32,7 +32,7 @@
     <main>
       <h1>Sets</h1>
       <h2>Login to view custom sets:</h2>
-      <form method="get" action="play.html">
+      <form method="get" action="host.html">
         <label for="username">Username:</label>
         <input type="text" id="username" placeholder="username" />
         <br>
@@ -41,7 +41,13 @@
         <br>
         <button type="submit">Login</button>
       </form>
-      <h2>Public Sets:</h2>
+      <h2>View Public Sets:</h2>
+      <label for="sets">Set:</label>
+      <select id="sets" name="displaySet">
+        <option>Locations</option>
+        <option selected>Animals</option>
+        <option>Superheroes</option>
+      </select>
     </main>
 
     <footer>
