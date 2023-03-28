@@ -17,7 +17,9 @@
         <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
         <menu>
           <li><a href="index.html">Home</a></li>
-          <li><a href="play.html">Play</a></li>
+          <li><a href="join.html">Join Game</a></li>
+          <li><a href="host.html">Host Game</a></li>
+          <li><a href="play.html">In Game</a></li>
           <li><a href="sets.html">View Sets</a></li>
           <li><a href="about.html">About</a></li>
         </menu>
@@ -28,13 +30,18 @@
     </header>
 
     <main>
-      <h1>Welcome</h1>
-      <p>Login to play</p>
+      <h1>Sets</h1>
+      <h2>Login to view custom sets:</h2>
       <form method="get" action="play.html">
-        <label for="name">Name</label>
-        <input type="text" id="name" placeholder="Your name here" />
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="username" />
+        <br>
+        <label for="password">Password:</label>
+        <input type="text" id="password" placeholder="password" />
+        <br>
         <button type="submit">Login</button>
       </form>
+      <h2>Public Sets:</h2>
     </main>
 
     <footer>
