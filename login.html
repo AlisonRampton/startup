@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <!-- Tell browsers not to scale the viewport automatically -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Play</title>
+    <title>Chameleon Artist Spy</title>
     <link rel="icon" href="favicon.ico" />
   </head>
   <body>
@@ -30,28 +30,19 @@
       <hr />
     </header>
 
-    <!-- Without functionality implemented, I am allowing access to this page without a room code-->
     <main>
-      <h1>Game Room</h1>
-      <p>Room Code: Unknown</p>
-      <p>Players:</p>
-      <ul>
-        <li>John Green (Host)</li>
-        <li>Unknown Person (You)</li>
-        <li>Dan Wells</li>
-        <li>Jason Snell</li>
-        <li>Myke Hurley</li>
-      </ul>
-      <p>Game Status: Round Ongoing</p>
-      <button type="idk">View Your Knowledge</button>
-      <p>Chosen Set: Animals</p>
-      <ul>
-        <li>Dog</li>
-        <li>Cat</li>
-        <li>Pig</li>
-        <li>Rabbit</li>
-        <li>Hamster</li>
-      </ul>
+      <h1>Sets</h1>
+      <h2>Login to View Custom Sets:</h2>
+      <form method="get" action="host.html">
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="username" />
+        <br>
+        <label for="password">Password:</label>
+        <input type="text" id="password" placeholder="password" />
+        <br>
+        <button type="submit">Login</button>
+      </form>
+      <!-- Will I need to make another html page specifically for post login that isn't this one? -->
     </main>
 
     <footer>
