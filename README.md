@@ -242,3 +242,9 @@ JS:
 - I still feel like Javascript is the weird love child of Java and Python that makes less sense than either one
 - I think the main thing throwing me off is using this.element without having to first declare element as a member of the class
 - need to reference the documentation so I know all the style attributes I can manipulate
+
+# Startup Observations
+HTML:
+- br tags are necessary but annoying
+- I think the option group stuff will be really helpful for the project, I just hope I'm able to dynamically change options when the user is logged in
+- As I worked on this, I feel like there were just more and more pages I realized I needed; can you drastically change content depending on login status?
