@@ -38,6 +38,25 @@ menu .nav-item {
   padding: 0 0.3em;
 }
 
+.rainbow-text {
+  background: repeating-linear-gradient(90deg, violet, indigo, blue, green, yellow, orange, red, violet);   
+  color: transparent;
+    background: linear-gradient(to left, #1e5799, #2ce0bf, #76dd2c, #dba62b, #e02cbf, #1e5799);
+  background-size: 1000px 100%;
+  animation: rainbow-anim 15s linear infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+@keyframes rainbow-anim {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 10000px;
+  }
+}
+
 footer a {
   float: right;
 }
