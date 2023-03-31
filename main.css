@@ -2,6 +2,8 @@ body {
   display: flex;
   flex-direction: column;
   min-width: 375px;
+  margin: 0;
+  height: 100vh;
   background-image: var(--bs-gradient);
 }
 
