@@ -9,7 +9,7 @@ body {
 
 header {
   flex: 0 80px;
-  background-color: darkslategray;
+  background-color: rgba(47, 107, 68, 0.738);
 }
 
 main {
@@ -22,7 +22,7 @@ main {
 
 footer {
   flex: 0 30px;
-  background-color: darkolivegreen;
+  background-color: rgba(47, 107, 68, 0.738);
 }
 
 menu {
@@ -46,7 +46,7 @@ menu .nav-item {
   color: transparent;
   background: linear-gradient(to left, #1e5799, #2ce0bf, #76dd2c, #dba62b, #e02cbf, #1e5799);
   background-size: 1000px 100%;
-  animation: rainbow-anim 15s linear infinite;
+  animation: rainbow-anim 90s linear infinite;
   background-clip: text;
   -webkit-background-clip: text;
 }
@@ -64,54 +64,6 @@ footer a {
   float: right;
 }
 
-#count {
-  color: rgb(246, 239, 158);
-}
-
-.players {
-  flex: 1;
-  width: 100%;
-  padding: 0.5em;
-}
-
-.player-name {
-  color: rgb(118, 190, 210);
-}
-
-
-.controls {
-  position: absolute;
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  background-color: black;
-  padding: 2em;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: column;
-}
-
-.game-name {
-  font-size: 2em;
-  font-weight: bold;
-  margin-bottom: 0.5em;
-}
-
-.score {
-  position: absolute;
-  text-align: center;
-  font-size: 20px;
-  font-family: monospace;
-  font-weight: bold;
-  color: red;
-  cursor: default;
-  width: 50px;
-  height: 30px;
-  border-radius: 10px;
-  border: solid thin rgb(117, 0, 0);
-  background-color: #300;
-}
 
 .center {
   top: 50%;
