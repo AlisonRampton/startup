@@ -18,9 +18,12 @@
     <!-- Use header, main, and footer elements to give semantic structure -->
     <header class="bg-gradient">
       <!-- Navigation elements -->
-      <nav class="navbar fixed-top navbar-dark">
+      <!-- <nav class="navbar fixed-top navbar-dark">
         <a class="navbar-brand" href="index.html">Chameleon Artist Spy</a>
-        <menu class="navbar-nav">
+        <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#menu-nav"
+        aria-controls="menu-nav" aria-expanded="false" aria-label="Toggle navigation"><span class="dark-blue-text"><i 
+          class="fas fa-bars fa-1x"></i></span></button>
+        <menu class="collapse navbar-collapse" id="menu-nav">
           <li class="nav-item"><a class="nav-link active" href="index.html">Join Game</a></li>
           <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
           <li class="nav-item"><a class="nav-link" href="host.html">Host Game</a></li>
@@ -28,19 +31,51 @@
           <li class="nav-item"><a class="nav-link" href="sets.html">View Sets</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
         </menu>
+      </nav> -->
+      <nav role="navigation">
+        <div id="menuToggle">
+          <!--
+          A fake / hidden checkbox is used as click reciever,
+          so you can use the :checked selector on it.
+          -->
+          <input type="checkbox" />
+          
+          <!--
+          Some spans to act as a hamburger.
+          
+          They are acting like a real hamburger,
+          not that McDonalds stuff.
+          -->
+          <span></span>
+          <span></span>
+          <span></span>
+          
+          <!--
+          Too bad the menu has to be inside of the button
+          but hey, it's pure CSS magic.
+          -->
+          <ul id="menu">
+            <li class="nav-item"><a class="nav-link active" href="index.html">Join Game</a></li>
+            <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="host.html">Host Game</a></li>
+            <li class="nav-item"><a class="nav-link" href="play.html">In Game</a></li>
+            <li class="nav-item"><a class="nav-link" href="sets.html">View Sets</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          </ul>
+        </div>
       </nav>
     </header>
 
     <main class="container-fluid text-center">
       <h1 class="rainbow-text">Join Room</h1>
-
+      <br><br>
       <form method="get" action="play.html">
         <label for="roomCode">Code:</label>
         <input type="text" id="roomCode" placeholder="room code" />
-        <br>
+        <br><br>
         <label for="name">Name:</label>
         <input type="text" id="name" placeholder="your name" />
-        <br>
+        <br><br>
         <button type="submit" class="btn btn-outline-light">Join</button>
       </form>
     </main>
