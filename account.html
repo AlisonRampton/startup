@@ -56,9 +56,9 @@
           -->
           <ul id="menu">
             <li class="nav-item"><a href="join.html">Join Game</a></li>
+            <li class="nav-item"><a href="host.html">Host Game</a></li>
             <li class="nav-item"><a href="login.html">Login</a></li>
             <li class="nav-item"><a href="account.html">Create Account</a></li>
-            <li class="nav-item"><a href="host.html">Host Game</a></li>
             <li class="nav-item"><a href="play.html">In Game</a></li>
             <li class="nav-item"><a href="sets.html">View Sets</a></li>
             <li class="nav-item"><a href="about.html">About</a></li>
@@ -69,17 +69,27 @@
     </header>
 
     <main class="container-fluid text-center">
-      <h1>Login</h1>
-      <form method="get" action="host.html">
+      <h1 class="rainbow-text">Create Account</h1>
+      <br><br>
+      <form method="get" action="login.html">
         <label for="username">Username:</label>
         <input type="text" id="username" placeholder="username" />
-        <br>
+        <br><br>
         <label for="password">Password:</label>
         <input type="text" id="password" placeholder="password" />
-        <br>
-        <button type="submit" class="btn btn-outline-light">Login</button>
+        <br><br>
+        <label for="password">Confirm Password:</label>
+        <input type="text" id="password" placeholder="password" />
+        <br><br>
+        <button type="submit" class="btn btn-outline-light">Create Account</button>
       </form>
-      <!-- How to return to previous page where login button was clicked? -->
+      <br>
+      <div class="rowCluster">
+        <p class="text-muted">Already have an account?</p>
+        <form action="login.html">
+          <button type="submit" class="btn btn-outline-secondary">Login</button>
+        </form>
+      </div>
     </main>
 
     <footer class="text-dark text-muted">
