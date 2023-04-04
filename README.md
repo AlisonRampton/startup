@@ -248,3 +248,8 @@ HTML:
 - br tags are necessary but annoying
 - I think the option group stuff will be really helpful for the project, I just hope I'm able to dynamically change options when the user is logged in
 - As I worked on this, I feel like there were just more and more pages I realized I needed; can you drastically change content depending on login status?
+CSS:
+- I got it to look pretty!
+- Hamburger menus are harder than I would have thought
+- I definitely looked up some code, but I feel like I was able to innovate and make the website look how I want it to
+- Using hamburger menu everywhere b/c project is mobile first, and I don't need to overcomplicate navigation with how much is left to accomplish
