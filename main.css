@@ -13,7 +13,7 @@ header {
 }
 
 main {
-  flex: 1 calc(100vh - 110px);
+  flex: 1 calc(100vh - 120px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,9 +48,8 @@ footer {
 
 #menuToggle a:hover
 {
-  color: tomato;
+  color: rgb(5, 188, 90);
 }
-
 
 #menuToggle input
 {
@@ -167,6 +166,15 @@ footer {
   transform: none;
 }
 
+#home {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: larger;
+  font-weight: lighter;
+  color: #cdcdcd;
+}
+
 .rainbow-text {
   color: transparent;
   background: linear-gradient(to left, #1e5799, #2ce0bf, #76dd2c, #dba62b, #e02cbf, #1e5799);
@@ -198,12 +206,12 @@ footer a {
 
 @media (max-height: 600px) {
   header {
-    display: none;
+    flex: 0 80px;
   }
   footer {
     display: none;
   }
   main {
-    flex: 1 100vh;
+    flex: 1 calc(100vh-80px);
   }
 }
