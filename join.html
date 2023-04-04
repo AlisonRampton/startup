@@ -69,25 +69,17 @@
     </header>
 
     <main class="container-fluid text-center">
-      <h1 class="rainbow-text">Welcome to Chameleon Artist Spy</h1>
+      <h1 class="rainbow-text">Join Room</h1>
       <br><br>
-      <div class="rowCluster">
-        <form action="join.html">
-          <button type="submit" class="btn btn-outline-light">Join Game with Code</button>
-        </form>
-        <form action="host.html">
-          <button type="submit" class="btn btn-outline-light">Host New Game</button>
-        </form>
-      </div>
-      <br>
-      <div class="rowCluster">
-        <form action="login.html">
-          <button type="submit" class="btn btn-outline-light">Login</button>
-        </form>
-        <form action="account.html">
-          <button type="submit" class="btn btn-outline-light">Create Account</button>
-        </form>
-      </div>
+      <form method="get" action="play.html">
+        <label for="roomCode">Code:</label>
+        <input type="text" id="roomCode" placeholder="room code" />
+        <br><br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="your name" />
+        <br><br>
+        <button type="submit" class="btn btn-outline-light">Join</button>
+      </form>
     </main>
 
     <footer>
@@ -98,4 +90,3 @@
     </footer>
   </body>
 </html>
-<!-- ./deployFiles.sh -k ../../../Downloads/260-keys.pem -h fakeartist.click -s startup -->

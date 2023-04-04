@@ -20,6 +20,17 @@ main {
   justify-content: center;
 }
 
+.rowCluster {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.rowCluster form {
+  margin: 10px;
+}
+
 footer {
   flex: 0 30px;
   background-color: rgba(47, 107, 68, 0.738);
@@ -27,7 +38,9 @@ footer {
 
 #menuToggle
 {
-  display: block;
+  display: inline-block;
+  height: fit-content;
+  width: fit-content;
   position: relative;
   top: 30px;
   left: 30px;
@@ -168,11 +181,16 @@ footer {
 
 #home {
   position: absolute;
-  top: 30px;
+  top: 15px;
   right: 30px;
-  font-size: larger;
+  height: fit-content;
+  width: fit-content;
+  display: inline-block;
+  padding: 10px 0;
+  font-size: 22px;
   font-weight: lighter;
   color: #cdcdcd;
+  text-decoration: none;
 }
 
 .rainbow-text {
