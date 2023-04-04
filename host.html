@@ -72,6 +72,9 @@
       <h1 class="rainbow-text">Host Game</h1>
       <br>
       <form method="get" action="play.html">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="your name" />
+        <br><br>
         <label for="sets">Select Set:</label>
         <select id="sets" name="displaySet">
           <optgroup label="Public Sets">
@@ -86,7 +89,7 @@
         </select>
         <br><br>
         <label for="number"># of spies: </label>
-        <input type="number" name="numSpies" id="number" min="1" max="20" step="1" />
+        <input type="number" name="numSpies" id="number" min="1" max="20" step="1" value="1" />
         <br><br>
         <button type="submit" class="btn btn-outline-light">Begin Hosting</button>
       </form>

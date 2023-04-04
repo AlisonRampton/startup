@@ -3,7 +3,7 @@ body {
   flex-direction: column;
   min-width: 375px;
   margin: 0;
-  height: 100vh;
+  height: max(100vh,fit-content);
   background-image: var(--bs-gradient);
 }
 
@@ -24,7 +24,11 @@ main {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
+}
+
+.rowCluster.spaced {
+  width: 80vw;
 }
 
 .rowCluster form {
@@ -32,8 +36,15 @@ main {
 }
 
 .rowCluster p {
-  
   margin-bottom: 0;
+}
+
+.rowCluster button {
+  margin: 10px;
+}
+
+.rowCluster table {
+  margin: 10px;
 }
 
 footer {
@@ -196,6 +207,19 @@ footer {
   font-weight: lighter;
   color: #cdcdcd;
   text-decoration: none;
+}
+
+#player-table {
+  height: fit-content;
+  width: fit-content;
+  display: inline-block;
+}
+
+#set-table {
+  height: fit-content;
+  table-layout: auto;
+  width: 25vw;
+  display: table;
 }
 
 .rainbow-text {

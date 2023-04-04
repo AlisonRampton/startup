@@ -70,26 +70,91 @@
 
     <!-- Without functionality implemented, I am allowing access to this page without a room code-->
     <main class="container-fluid text-center">
-      <h1>Game Room</h1>
+      <br>
+      <h1 class="rainbow-text">Game Room</h1>
       <p>Room Code: Unknown</p>
-      <p>Players:</p>
+      <!-- <p>Players:</p>
       <ul>
         <li>John Green (Host)</li>
         <li>Unknown Person (You)</li>
         <li>Dan Wells</li>
         <li>Jason Snell</li>
         <li>Myke Hurley</li>
-      </ul>
-      <p>Game Status: Round Ongoing</p>
-      <button type="idk" class="btn btn-outline-light">View Your Knowledge</button>
-      <p>Chosen Set: Animals</p>
-      <ul>
-        <li>Dog</li>
-        <li>Cat</li>
-        <li>Pig</li>
-        <li>Rabbit</li>
-        <li>Hamster</li>
-      </ul>
+      </ul> -->
+      <div class="rowCluster">
+        <p>Game Status: Round Ongoing</p>
+        <button type="idk" class="btn btn-outline-secondary">View Your Knowledge</button>
+      </div>
+      <div class="rowCluster">
+        <table id="player-table" class="table table-success table-striped">
+          <thead class="table-dark">
+            <tr>
+              <th>Players</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John Green (Host)</td>
+            </tr>
+            <tr>
+              <td>Unknown Person (You)</td>
+            </tr>
+            <tr>
+              <td>Dan Wells</td>
+            </tr>
+            <tr>
+              <td>Jason Snell</td>
+            </tr>
+            <tr>
+              <td>Myke Hurley</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <!-- <p>Chosen Set: Animals</p>
+        <ul>
+          <li>Dog</li>
+          <li>Cat</li>
+          <li>Pig</li>
+          <li>Rabbit</li>
+          <li>Hamster</li>
+        </ul> -->
+        <div>
+          <table id="set-table" class="table table-info table-striped">
+            <thead class="table-dark">
+              <tr>
+                <th>Current Set: Animals</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Pig</td>
+              </tr>
+              <tr>
+                <td>Duck</td>
+              </tr>
+              <tr>
+                <td>Cat</td>
+              </tr>
+              <tr>
+                <td>Rabbit</td>
+              </tr>
+              <tr>
+                <td>Snail</td>
+              </tr>
+              <tr>
+                <td>Turtle</td>
+              </tr>
+              <tr>
+                <td>Fish</td>
+              </tr>
+              <tr>
+                <td>Squirrel</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </main>
 
     <footer class="text-dark text-muted">
