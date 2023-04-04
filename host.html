@@ -69,28 +69,31 @@
     </header>
 
     <main class="container-fluid text-center">
-      <h1>Host Game</h1>
-      <h2>Login to Access Custom Sets:</h2>
-      <form method="get" action="login.html">
-        <button type="submit" class="btn btn-outline-light">Login</button>
-      </form>
-      <!-- Will I need to make another html page specifically for post login that isn't this one? -->
-      <h2>Select Set:</h2>
-      <label for="sets">Set:</label>
-      <select id="sets" name="displaySet">
-        <optgroup label="Public Sets">
-          <option>Locations</option>
-          <option selected>Animals</option>
-          <option>Superheroes</option>
-        </optgroup>
-        <optgroup label="Custom Sets">
-          <option>My Set</option>
-          <option>Cosmere Books</option>
-        </optgroup>
-      </select>
-      <!-- TODO: add connecting display of elements in set selected-->
+      <h1 class="rainbow-text">Host Game</h1>
       <br>
-      <button type="submit" class="btn btn-outline-light">Host Game</button>
+      <form method="get" action="play.html">
+        <label for="sets">Select Set:</label>
+        <select id="sets" name="displaySet">
+          <optgroup label="Public Sets">
+            <option>Locations</option>
+            <option selected>Animals</option>
+            <option>Superheroes</option>
+          </optgroup>
+          <optgroup label="Custom Sets">
+            <option>My Set</option>
+            <option>Cosmere Books</option>
+          </optgroup>
+        </select>
+        <br><br>
+        <label for="number"># of spies: </label>
+        <input type="number" name="numSpies" id="number" min="1" max="20" step="1" />
+        <br><br>
+        <button type="submit" class="btn btn-outline-light">Begin Hosting</button>
+      </form>
+      <br><br>
+      <form method="get" action="login.html">
+        <button id="loginForHost" type="submit" class="btn btn-outline-secondary">Login to Access Custom Sets</button>
+      </form>
     </main>
 
     <footer class="text-dark text-muted">
