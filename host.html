@@ -5,6 +5,7 @@
     <!-- Tell browsers not to scale the viewport automatically -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chameleon Artist Spy</title>
+    <script src="login.js"></script>
     <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet" href="main.css" />
     <link
@@ -95,7 +96,7 @@
       </form>
       <br><br>
       <form method="get" action="login.html">
-        <button id="loginForHost" type="submit" class="btn btn-outline-secondary">Login to Access Custom Sets</button>
+        <button id="loginForHost" type="submit" class="btn btn-outline-secondary" onclick="setOrigin('host.html')">Login to Access Custom Sets</button>
       </form>
     </main>
 

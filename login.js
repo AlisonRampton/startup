@@ -17,7 +17,7 @@ function login(form) {
     }
   }
   
-  // print that username or password is incorrect
+  window.alert("LOGIN FAILED: Incorrect Username or Password");
   
 }
 
@@ -45,7 +45,7 @@ function newAccount(form) {
     }
   }
   if (found) {
-    //print out that username is taken
+    window.alert("Username is already taken!")
   }
   else {
     users.push(newUser);

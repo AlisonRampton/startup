@@ -5,6 +5,7 @@
     <!-- Tell browsers not to scale the viewport automatically -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chameleon Artist Spy</title>
+    <script src="login.js"></script>
     <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet" href="main.css" />
     <link
@@ -71,7 +72,7 @@
     <main class="container-fluid text-center">
       <h1 class="rainbow-text">Sets</h1>
       <form method="get" action="login.html">
-        <button type="submit" class="btn btn-outline-secondary">Login to View Custom Sets</button>
+        <button type="submit" class="btn btn-outline-secondary" onclick="setOrigin('sets.html')">Login to View Custom Sets</button>
       </form>
       <br>
       <!-- Hoping I can add in a way to modify sets once we get to adding JS -->
