@@ -5,6 +5,7 @@
     <!-- Tell browsers not to scale the viewport automatically -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chameleon Artist Spy</title>
+    <script src="login.js"></script>
     <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet" href="main.css" />
     <link
@@ -71,17 +72,17 @@
     <main class="container-fluid text-center">
       <h1 class="rainbow-text">Create Account</h1>
       <br><br>
-      <form method="get" action="login.html">
+      <form method="get" action="">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="your name" />
+        <br><br>
         <label for="username">Username:</label>
         <input type="text" id="username" placeholder="username" />
         <br><br>
         <label for="password">Password:</label>
-        <input type="text" id="password" placeholder="password" />
+        <input type="password" id="password" placeholder="password" />
         <br><br>
-        <label for="password">Confirm Password:</label>
-        <input type="text" id="password" placeholder="password" />
-        <br><br>
-        <button type="submit" class="btn btn-outline-light">Create Account</button>
+        <button type="button" class="btn btn-outline-light" onclick="newAccount(this.form)">Create Account</button>
       </form>
       <br>
       <div class="rowCluster">
@@ -92,7 +93,7 @@
       </div>
     </main>
 
-    <footer class="text-dark text-muted">
+    <footer>
       <div class="container-fluid">
         <span class="text-reset">Alison Thomson</span>
         <a href="https://github.com/AlisonRampton/startup">GitHub</a>
