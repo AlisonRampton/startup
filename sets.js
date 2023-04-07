@@ -1,7 +1,10 @@
 "use strict";
 
 const PublicDatabase = new Map();
-const CustomDatabase = new Map();
+let CustomDatabase = new Map();
+if (localStorage.getItem("CustomSets") == null){
+  localStorage.setItem("CustomSets", JSON.stringify(Object.fromEntries(CustomDatabase)));
+}
 
 PublicDatabase.set("Animals", [
   "Cat",
@@ -35,9 +38,6 @@ PublicDatabase.set("Superheroes", [
 ]);
 
 
-let currentData = PublicDatabase.get("Animals");
-let sortDirection = 1;
-
 // document.querySelector('#lstparameters option:checked').parentElement.label
 
 function selectTable(tableID) {
@@ -47,6 +47,7 @@ function selectTable(tableID) {
     data = PublicDatabase.get(dataKey);
   }
   else {
+    CustomDatabase = new Map(Object.entries(JSON.parse(localStorage.getItem("CustomSets"))));
     data = CustomDatabase.get(dataKey);
   }
   table(tableID, dataKey, data);
@@ -55,14 +56,17 @@ function selectTable(tableID) {
 function table(tableID, dataKey, data) {
 
   if (!!data && data.length > 1) {
-    currentData = data;
     const tableElement = generateTable(dataKey, data);
 
     const output = document.getElementById(tableID);
 
     removeAllChildNodes(output);
     output.appendChild(tableElement);
-  } else {
+  }
+  else if (!!data){
+    outputData("Empty Set", "Add some entries to this set!", tableID)
+  }
+  else {
     outputData("invalid input", dataKey, tableID);
   }
 }
@@ -126,6 +130,14 @@ function outputData(title, data, ID) {
 
 function setOptions(showPublic, showPrivate) {
   const output = document.getElementById("displaySet");
+  removeAllChildNodes(output);
+  const defaultElement = document.createElement("option");
+  output.appendChild(defaultElement);
+  defaultElement.value="";
+  defaultElement.disabled = true;
+  defaultElement.selected = true;
+  const defaultText = document.createTextNode("Select a set");
+  defaultElement.appendChild(defaultText);
 
   if (showPublic) {
     const publicElement = document.createElement("optgroup");
@@ -141,6 +153,7 @@ function setOptions(showPublic, showPrivate) {
   }
 
   if (showPrivate) {
+    CustomDatabase = new Map(Object.entries(JSON.parse(localStorage.getItem("CustomSets"))));
     const customElement = document.createElement("optgroup");
     customElement.label = "Custom Sets";
     output.appendChild(customElement);
@@ -154,4 +167,19 @@ function setOptions(showPublic, showPrivate) {
   }
 }
 
-//window.onload = setOptions;
+function addSet() {
+  const setName = window.prompt("Please enter the name of your new set:","new set");
+  CustomDatabase = new Map(Object.entries(JSON.parse(localStorage.getItem("CustomSets"))));
+  if (setName) {CustomDatabase.set(setName,[]);}
+  localStorage.setItem("CustomSets", JSON.stringify(Object.fromEntries(CustomDatabase)));
+  setOptions(false, true);
+}
+
+function addItemToSet(setName) {
+  CustomDatabase = new Map(Object.entries(JSON.parse(localStorage.getItem("CustomSets"))));
+  const setName = document.querySelector('#displaySet option:checked').value;
+  const itemName = window.prompt("Please enter what you want to add to this set:","new entry");
+  CustomDatabase.get(setName).push(itemName);
+  localStorage.setItem("CustomSets", JSON.stringify(Object.fromEntries(CustomDatabase)));
+  selectTable('set-table');
+}

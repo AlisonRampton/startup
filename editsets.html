@@ -7,7 +7,7 @@
     <title>Chameleon Artist Spy</title>
     <script src="login.js"></script>
     <script src="sets.js" defer></script>
-    <script>
+    <script defer>
       window.onload = function() {
         setOptions(false, true);
       };
@@ -76,10 +76,8 @@
     </header>
 
     <main class="container-fluid text-center">
-      <h1 class="rainbow-text">Sets</h1>
-      <form method="get" action="login.html">
-        <button type="submit" class="btn btn-outline-secondary" onclick="setOrigin('sets.html')">Login to View Custom Sets</button>
-      </form>
+      <h1 class="rainbow-text">Edit Sets</h1>
+      
       <!-- maybe I'll be able to do set manipulation w/React or something
       <form method="get" action="editsets.html">
         <button type="submit" class="btn btn-outline-secondary" onclick="setOrigin('sets.html')">Add New Set</button>
@@ -97,8 +95,9 @@
             <option>Cosmere Books</option>
           </optgroup>
         -->
+      <button type="submit" class="btn btn-outline-success" onclick="addSet()">Add Set</button>
       <div class="rowCluster">
-        <label for="sets">View Set:</label>
+        <label for="sets">Choose Set:</label>
         <select id="displaySet" onchange="selectTable('set-table')">
           <option value="" disabled selected>Select a set</option>
         </select>
