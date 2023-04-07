@@ -9,7 +9,7 @@
     <script src="sets.js" defer></script>
     <script>
       window.onload = function() {
-        setOptions(true, loginStatus());
+        setOptions(false, true);
       };
     </script>
     <link rel="icon" href="favicon.ico" />
@@ -80,18 +80,28 @@
       <form method="get" action="login.html">
         <button type="submit" class="btn btn-outline-secondary" onclick="setOrigin('sets.html')">Login to View Custom Sets</button>
       </form>
-      <!-- maybe I'll be able to do set manipulation w/React or something -->
+      <!-- maybe I'll be able to do set manipulation w/React or something
       <form method="get" action="editsets.html">
-        <button type="submit" class="btn btn-outline-secondary">Edit Sets</button>
-      </form>
+        <button type="submit" class="btn btn-outline-secondary" onclick="setOrigin('sets.html')">Add New Set</button>
+      </form> -->
       <br>
-      <!-- Hoping I can add in a way to modify sets once we get to adding JS -->
+      <!-- Hoping I can add in a way to modify sets once we get to adding JS
+      
+                <optgroup id="publicSets" label="Public Sets">
+            <option>Locations</option>
+            <option>Animals</option>
+            <option>Superheroes</option>
+          </optgroup>
+          <optgroup id="customSets" label="Custom Sets">
+            <option>My Set</option>
+            <option>Cosmere Books</option>
+          </optgroup>
+        -->
       <div class="rowCluster">
-        <label for="sets">Edit Set:</label>
+        <label for="sets">View Set:</label>
         <select id="displaySet" onchange="selectTable('set-table')">
           <option value="" disabled selected>Select a set</option>
         </select>
-        <!-- Add new set -->
       </div>
       <br>
       <div id="set-table"></div>

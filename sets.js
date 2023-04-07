@@ -1,8 +1,9 @@
 "use strict";
 
-const Database = new Map();
+const PublicDatabase = new Map();
+const CustomDatabase = new Map();
 
-Database.set("Animals", [
+PublicDatabase.set("Animals", [
   "Cat",
   "Fish",
   "Rabbit",
@@ -12,7 +13,7 @@ Database.set("Animals", [
   "Parrot"
 ]);
 
-Database.set("Locations", [
+PublicDatabase.set("Locations", [
   "Farm",
   "Bank",
   "National Park",
@@ -22,7 +23,7 @@ Database.set("Locations", [
   "Swimming Pool"
 ]);
 
-Database.set("Superheroes", [
+PublicDatabase.set("Superheroes", [
   "Spiderman",
   "Superman",
   "Batman",
@@ -34,24 +35,35 @@ Database.set("Superheroes", [
 ]);
 
 
-let currentData = Database.get("Animals");
+let currentData = PublicDatabase.get("Animals");
 let sortDirection = 1;
 
 // document.querySelector('#lstparameters option:checked').parentElement.label
 
-function table() {
+function selectTable(tableID) {
   let dataKey = document.querySelector('#displaySet option:checked').value;
-  let data = Database.get(dataKey);
+  let data = [];
+  if (document.querySelector('#displaySet option:checked').parentElement.label === "Public Sets") {
+    data = PublicDatabase.get(dataKey);
+  }
+  else {
+    data = CustomDatabase.get(dataKey);
+  }
+  table(tableID, dataKey, data);
+}
+
+function table(tableID, dataKey, data) {
+
   if (!!data && data.length > 1) {
     currentData = data;
     const tableElement = generateTable(dataKey, data);
 
-    const output = document.getElementById("set-table");
+    const output = document.getElementById(tableID);
 
     removeAllChildNodes(output);
     output.appendChild(tableElement);
   } else {
-    outputData("invalid input", dataKey);
+    outputData("invalid input", dataKey, tableID);
   }
 }
 
@@ -103,11 +115,43 @@ function removeAllChildNodes(parent) {
   }
 }
 
-function outputData(title, data) {
-  const output = document.getElementById("set-table");
+function outputData(title, data, ID) {
+  const output = document.getElementById(ID);
   output.innerHTML = `<h3>${title}</h3><pre>${JSON.stringify(
     data,
     null,
     2
   )}</pre>`;
 }
+
+function setOptions(showPublic, showPrivate) {
+  const output = document.getElementById("displaySet");
+
+  if (showPublic) {
+    const publicElement = document.createElement("optgroup");
+    publicElement.label = "Public Sets";
+    output.appendChild(publicElement);
+
+    PublicDatabase.forEach((value, key, map)=>{
+      const optElement = document.createElement("option");
+      publicElement.appendChild(optElement);
+      const textNode = document.createTextNode(key);
+      optElement.appendChild(textNode);
+    });
+  }
+
+  if (showPrivate) {
+    const customElement = document.createElement("optgroup");
+    customElement.label = "Custom Sets";
+    output.appendChild(customElement);
+
+    CustomDatabase.forEach((value, key, map)=>{
+      const optElement = document.createElement("option");
+      customElement.appendChild(optElement);
+      const textNode = document.createTextNode(key);
+      optElement.appendChild(textNode);
+    });
+  }
+}
+
+//window.onload = setOptions;

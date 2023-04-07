@@ -61,3 +61,12 @@ function setOrigin(currPage) {
 function getOrigin() {
   return localStorage.getItem("originPage") ?? "index.html";
 }
+
+function loginStatus() {
+  if (localStorage.getItem('currUser')!==null) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
