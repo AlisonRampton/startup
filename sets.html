@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chameleon Artist Spy</title>
     <script src="login.js"></script>
+    <script src="sets.js"></script>
     <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet" href="main.css" />
     <link
@@ -82,52 +83,21 @@
       <!-- Hoping I can add in a way to modify sets once we get to adding JS -->
       <div class="rowCluster">
         <label for="sets">View Set:</label>
-        <select id="sets" name="displaySet">
-          <optgroup label="Public Sets">
+        <select id="displaySet" onchange="table()">
+          <optgroup id="publicSets" label="Public Sets">
             <option>Locations</option>
             <option selected>Animals</option>
             <option>Superheroes</option>
           </optgroup>
-          <optgroup label="Custom Sets">
+          <optgroup id="customSets" label="Custom Sets">
             <option>My Set</option>
             <option>Cosmere Books</option>
           </optgroup>
         </select>
       </div>
       <br>
-      <table id="set-table" class="table table-info table-striped">
-        <thead class="table-dark">
-          <tr>
-            <th>Current Set: Animals</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Pig</td>
-          </tr>
-          <tr>
-            <td>Duck</td>
-          </tr>
-          <tr>
-            <td>Cat</td>
-          </tr>
-          <tr>
-            <td>Rabbit</td>
-          </tr>
-          <tr>
-            <td>Snail</td>
-          </tr>
-          <tr>
-            <td>Turtle</td>
-          </tr>
-          <tr>
-            <td>Fish</td>
-          </tr>
-          <tr>
-            <td>Squirrel</td>
-          </tr>
-        </tbody>
-      </table>
+      <div id="set-table">Select a set</div>
+           
 
     </main>
 
