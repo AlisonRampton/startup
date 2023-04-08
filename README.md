@@ -246,6 +246,10 @@ Service:
 - The random picture and quote is kind of fun, though I don't know that I would use those in my startup project
 - Local storage is still useful in case internet goes wack
 - index.js is interesting as a routing point for basic functioning
+Database:
+- Now we're actually using those endpoints from Service!
+- The scores page is where it's most noticeable; greater feeling of interconnectedness seeing other people's high scores
+- Random quote of the day: Does wisdom perhaps appear on the earth as a raven which is inspired by the smell of carrion?
 
 # Startup Observations
 HTML:
