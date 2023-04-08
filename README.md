@@ -242,6 +242,10 @@ JS:
 - I still feel like Javascript is the weird love child of Java and Python that makes less sense than either one
 - I think the main thing throwing me off is using this.element without having to first declare element as a member of the class
 - need to reference the documentation so I know all the style attributes I can manipulate
+Service:
+- The random picture and quote is kind of fun, though I don't know that I would use those in my startup project
+- Local storage is still useful in case internet goes wack
+- index.js is interesting as a routing point for basic functioning
 
 # Startup Observations
 HTML:
