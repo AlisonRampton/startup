@@ -254,6 +254,10 @@ Login:
 - Yay secure login using cookies!
 - Also nice how it hides login controls depending on login state
 - This one has a combined login/create account page, unlike my startup. Ah well.
+WebSocket:
+- Simon: now with peer to peer communication!
+- More than the score list, the communication between active players makes this experience more of a group thing (or would, if other people were playing)
+- PeerProxy handles the protocol change to WebSocket from HTTP
 
 # Startup Observations
 HTML:
