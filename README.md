@@ -258,6 +258,10 @@ WebSocket:
 - Simon: now with peer to peer communication!
 - More than the score list, the communication between active players makes this experience more of a group thing (or would, if other people were playing)
 - PeerProxy handles the protocol change to WebSocket from HTTP
+React:
+- This takes a lot of reorganization
+- Cool collaboration between Bootstrap and React with the NPM package
+- Modular design instead of redundant HTML seems like a much better way to design things... will want to start with this in future project rather than trying to retrofit React into a pure HTML/CSS/JS project
 
 # Startup Observations
 HTML:
