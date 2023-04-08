@@ -228,47 +228,47 @@ Declarations:
 
 
 # Simon Observations
-HTML:
+## HTML:
 - Semantically different tags for the same functionality are interesting, like menu vs. ul
 - Since I'm getting to this late, I am so glad CSS is a thing because using old HTML for the visual fomatting seems like a pain
-- Not sure why the name entry doesn't work with the code provided?
-CSS:
+- Not sure why the name entry doesn't work with the code provided? 
+## CSS: 
 - WOW this is a huge visual upgrade
 - Still missing functionality, but I assume we will be implementing that with the Java
 - The Simon game itself is the most visually impressive, but for some reason I am really impressed by the table styling
-- I need to make sure I don't get too lost in the CSS on my startup because I can for sure get lost in trying to make it look pretty
-JS:
+- I need to make sure I don't get too lost in the CSS on my startup because I can for sure get lost in trying to make it look pretty 
+## JS: 
 - There's functionality now!
 - I still feel like Javascript is the weird love child of Java and Python that makes less sense than either one
 - I think the main thing throwing me off is using this.element without having to first declare element as a member of the class
-- need to reference the documentation so I know all the style attributes I can manipulate
-Service:
+- need to reference the documentation so I know all the style attributes I can manipulate 
+## Service: 
 - The random picture and quote is kind of fun, though I don't know that I would use those in my startup project
 - Local storage is still useful in case internet goes wack
-- index.js is interesting as a routing point for basic functioning
-Database:
+- index.js is interesting as a routing point for basic functioning 
+## Database: 
 - Now we're actually using those endpoints from Service!
 - The scores page is where it's most noticeable; greater feeling of interconnectedness seeing other people's high scores
-- Random quote of the day: Does wisdom perhaps appear on the earth as a raven which is inspired by the smell of carrion?
-Login:
+- Random quote of the day: Does wisdom perhaps appear on the earth as a raven which is inspired by the smell of carrion? 
+## Login: 
 - Yay secure login using cookies!
 - Also nice how it hides login controls depending on login state
-- This one has a combined login/create account page, unlike my startup. Ah well.
-WebSocket:
+- This one has a combined login/create account page, unlike my startup. Ah well. 
+## WebSocket: 
 - Simon: now with peer to peer communication!
 - More than the score list, the communication between active players makes this experience more of a group thing (or would, if other people were playing)
-- PeerProxy handles the protocol change to WebSocket from HTTP
-React:
+- PeerProxy handles the protocol change to WebSocket from HTTP 
+## React: 
 - This takes a lot of reorganization
 - Cool collaboration between Bootstrap and React with the NPM package
-- Modular design instead of redundant HTML seems like a much better way to design things... will want to start with this in future project rather than trying to retrofit React into a pure HTML/CSS/JS project
+- Modular design instead of redundant HTML seems like a much better way to design things... will want to start with this in future project rather than trying to retrofit React into a pure HTML/CSS/JS project 
 
 # Startup Observations
-HTML:
+## HTML: 
 - br tags are necessary but annoying
 - I think the option group stuff will be really helpful for the project, I just hope I'm able to dynamically change options when the user is logged in
-- As I worked on this, I feel like there were just more and more pages I realized I needed; can you drastically change content depending on login status?
-CSS:
+- As I worked on this, I feel like there were just more and more pages I realized I needed; can you drastically change content depending on login status? 
+## CSS: 
 - I got it to look pretty!
 - Hamburger menus are harder than I would have thought
 - I definitely looked up some code, but I feel like I was able to innovate and make the website look how I want it to
