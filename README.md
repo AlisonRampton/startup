@@ -250,6 +250,10 @@ Database:
 - Now we're actually using those endpoints from Service!
 - The scores page is where it's most noticeable; greater feeling of interconnectedness seeing other people's high scores
 - Random quote of the day: Does wisdom perhaps appear on the earth as a raven which is inspired by the smell of carrion?
+Login:
+- Yay secure login using cookies!
+- Also nice how it hides login controls depending on login state
+- This one has a combined login/create account page, unlike my startup. Ah well.
 
 # Startup Observations
 HTML:
