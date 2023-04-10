@@ -5,6 +5,8 @@
     <!-- Tell browsers not to scale the viewport automatically -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Play</title>
+    <script src="sets"></script>
+    <script src="game.js"></script>
     <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet" href="main.css" />
     <link
@@ -71,19 +73,11 @@
     <!-- Without functionality implemented, I am allowing access to this page without a room code-->
     <main class="container-fluid text-center">
       <br>
-      <h1 class="rainbow-text">Game Room</h1>
-      <p>Room Code: Unknown</p>
-      <!-- <p>Players:</p>
-      <ul>
-        <li>John Green (Host)</li>
-        <li>Unknown Person (You)</li>
-        <li>Dan Wells</li>
-        <li>Jason Snell</li>
-        <li>Myke Hurley</li>
-      </ul> -->
+      <h1 id="gameName" class="rainbow-text">Game Room</h1>
+      <p id="roomCode">Room Code: Unknown</p>
       <div class="rowCluster">
         <p>Game Status: Round Ongoing</p>
-        <button type="idk" class="btn btn-outline-secondary">View Your Knowledge</button>
+        <button type="button" class="btn btn-outline-secondary">View Your Knowledge</button>
       </div>
       <div class="rowCluster">
         <table id="player-table" class="table table-success table-striped">

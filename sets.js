@@ -40,6 +40,16 @@ PublicDatabase.set("Superheroes", [
 
 // document.querySelector('#lstparameters option:checked').parentElement.label
 
+function getSet(setID, publicSet) {
+  if (publicSet) {
+    return PublicDatabase.get(setID);
+  }
+  else {
+    CustomDatabase = new Map(Object.entries(JSON.parse(localStorage.getItem("CustomSets"))));
+    return CustomDatabase.get(setID);
+  }
+}
+
 function selectTable(tableID) {
   let dataKey = document.querySelector('#displaySet option:checked').value;
   let data = [];
@@ -175,7 +185,7 @@ function addSet() {
   setOptions(false, true);
 }
 
-function addItemToSet(setName) {
+function addItemToSet() {
   CustomDatabase = new Map(Object.entries(JSON.parse(localStorage.getItem("CustomSets"))));
   const setName = document.querySelector('#displaySet option:checked').value;
   const itemName = window.prompt("Please enter what you want to add to this set:","new entry");

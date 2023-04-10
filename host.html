@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chameleon Artist Spy</title>
     <script src="login.js"></script>
+    <script src="sets.js"></script>
+    <script src="game.js"></script>
+    <script>
+      window.onload = function() {
+        setOptions(true, loginStatus());
+        loginDisplay('loginForHost', false);
+      };
+    </script>
     <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet" href="main.css" />
     <link
@@ -73,26 +81,21 @@
       <h1 class="rainbow-text">Host Game</h1>
       <br>
       <form method="get" action="play.html">
+        <label for="roomName">Room Name:</label>
+        <input type="text" id="roomName" placeholder="Game Room" />
+        <br><br>
         <label for="name">Name:</label>
         <input type="text" id="name" placeholder="your name" />
         <br><br>
-        <label for="sets">Select Set:</label>
-        <select id="sets" name="displaySet">
-          <optgroup label="Public Sets">
-            <option>Locations</option>
-            <option selected>Animals</option>
-            <option>Superheroes</option>
-          </optgroup>
-          <optgroup label="Custom Sets">
-            <option>My Set</option>
-            <option>Cosmere Books</option>
-          </optgroup>
+        <label for="displaySet">Select Set:</label>
+        <select id="displaySet" onchange="">
+          <option value="" disabled selected>Select a set</option>
         </select>
         <br><br>
         <label for="number"># of spies: </label>
         <input type="number" name="numSpies" id="number" min="1" max="20" step="1" value="1" />
         <br><br>
-        <button type="submit" class="btn btn-outline-light">Begin Hosting</button>
+        <button type="submit" class="btn btn-outline-light" onclick="startGame(this.form)">Begin Hosting</button>
       </form>
       <br><br>
       <form method="get" action="login.html">

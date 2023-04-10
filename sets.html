@@ -7,9 +7,11 @@
     <title>Chameleon Artist Spy</title>
     <script src="login.js"></script>
     <script src="sets.js" defer></script>
-    <script>
+    <script defer>
       window.onload = function() {
         setOptions(true, loginStatus());
+        loginDisplay('loginRedirect', false);
+        loginDisplay('editBtn', true);
       };
     </script>
     <link rel="icon" href="favicon.ico" />
@@ -78,11 +80,11 @@
     <main class="container-fluid text-center">
       <h1 class="rainbow-text">Sets</h1>
       <form method="get" action="login.html">
-        <button type="submit" class="btn btn-outline-secondary" onclick="setOrigin('sets.html')">Login to View Custom Sets</button>
+        <button id="loginRedirect" type="submit" class="btn btn-outline-secondary" onclick="setOrigin('sets.html')">Login to View Custom Sets</button>
       </form>
       <!-- maybe I'll be able to do set manipulation w/React or something -->
       <form method="get" action="editsets.html">
-        <button type="submit" class="btn btn-outline-secondary">Edit Sets</button>
+        <button id="editBtn" type="submit" class="btn btn-outline-secondary">Edit Sets</button>
       </form>
       <br>
       <!-- Hoping I can add in a way to modify sets once we get to adding JS -->

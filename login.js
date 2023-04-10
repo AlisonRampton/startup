@@ -70,3 +70,12 @@ function loginStatus() {
     return false;
   }
 }
+
+function loginDisplay(elementID, desiredStatus) {
+  if (loginStatus() === desiredStatus) {
+    document.getElementById(elementID).style.display = 'inline-block';
+  }
+  else {
+    document.getElementById(elementID).style.display = 'none';
+  }
+}
