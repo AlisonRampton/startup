@@ -23,6 +23,7 @@ function login(form) {
 
 function logout() {
   localStorage.removeItem("currUser");
+  location.reload();
 }
 
 function newAccount(form) {
@@ -77,5 +78,13 @@ function loginDisplay(elementID, desiredStatus) {
   }
   else {
     document.getElementById(elementID).style.display = 'none';
+  }
+}
+
+function displayCurrUser() {
+  if (loginStatus()) {
+    userEl = document.getElementById('loggedInUser');
+    const textNode = document.createTextNode(localStorage.getItem("currUser"));
+    userEl.appendChild(textNode);
   }
 }

@@ -195,6 +195,15 @@ footer {
   font-size: 22px;
 }
 
+#menu li p {
+  font-size: 18px;
+  color: rgba(47, 103, 107, 0.738);
+}
+
+#menu li button {
+  font-size: 16px;
+}
+
 /*
  * And let's slide it in from the left
  */

@@ -7,8 +7,10 @@
     <title>Chameleon Artist Spy</title>
     <script src="login.js"></script>
     <script src="sets.js"></script>
-    <script>
+    <script defer>
       window.onload = function() {
+        displayCurrUser();
+        loginDisplay('loggedInStuffs', true);
         setOptions(false, true);
       };
     </script>
@@ -69,6 +71,10 @@
             <li class="nav-item"><a href="play.html">In Game</a></li>
             <li class="nav-item"><a href="sets.html">View Sets</a></li>
             <li class="nav-item"><a href="about.html">About</a></li>
+            <li id="loggedInStuffs">
+              <p id="loggedInUser">Logged In: </p>
+              <button type="button" id="logoutBtn" class="btn btn-outline-secondary" onclick="logout()">Logout</button>
+            </li>
           </ul>
         </div>
         <a id="home" href="index.html">Chameleon Artist Spy</a>

@@ -118,6 +118,9 @@ function pageSetup() {
   GameDatabase = new Map(Object.entries(JSON.parse(localStorage.getItem("Games"))));
   let roomCode = localStorage.getItem("CurrGame");
   let game = GameDatabase.get(roomCode);
+  let roomNode = document.createTextNode(game.name);
+  const roomElem = document.getElementById('gameName')
+  roomElem.appendChild(roomNode);
   table('play-set-table', game.setID, game.set);
   table('player-table', 'Players', game.players);
   const textNode = document.createTextNode(roomCode);

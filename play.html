@@ -5,12 +5,15 @@
     <!-- Tell browsers not to scale the viewport automatically -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Play</title>
+    <script src="login.js"></script>
     <script src="sets.js"></script>
     <script src="game.js"></script>
-    <script>
+    <script defer>
       window.onload = function() {
         pageSetup();
+        displayCurrUser();
         hostDisplay('startRoundBtn', true);
+        loginDisplay('loggedInStuffs', true);
       }
     </script>
     <link rel="icon" href="favicon.ico" />
@@ -70,6 +73,10 @@
             <li class="nav-item"><a href="play.html">In Game</a></li>
             <li class="nav-item"><a href="sets.html">View Sets</a></li>
             <li class="nav-item"><a href="about.html">About</a></li>
+            <li id="loggedInStuffs">
+              <p id="loggedInUser">Logged In: </p>
+              <button type="button" id="logoutBtn" class="btn btn-outline-secondary" onclick="logout()">Logout</button>
+            </li>
           </ul>
         </div>
         <a id="home" href="index.html">Chameleon Artist Spy</a>
@@ -79,7 +86,7 @@
     <!-- Without functionality implemented, I am allowing access to this page without a room code-->
     <main class="container-fluid text-center">
       <br>
-      <h1 id="gameName" class="rainbow-text">Game Room</h1>
+      <h1 id="gameName" class="rainbow-text"></h1>
       <p id="roomCode">Room Code: </p>
       <div class="rowCluster">
         <button type="button" class="btn btn-outline-info" onclick="viewKnowledge()">View Your Knowledge</button>

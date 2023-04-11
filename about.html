@@ -5,6 +5,13 @@
     <!-- Tell browsers not to scale the viewport automatically -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About</title>
+    <script src="login.js"></script>
+    <script defer>
+      window.onload = function() {
+        displayCurrUser();
+        loginDisplay('loggedInStuffs', true);
+      };
+    </script>
     <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet" href="main.css" />
     <link
@@ -62,6 +69,10 @@
             <li class="nav-item"><a href="play.html">In Game</a></li>
             <li class="nav-item"><a href="sets.html">View Sets</a></li>
             <li class="nav-item"><a href="about.html">About</a></li>
+            <li id="loggedInStuffs">
+              <p id="loggedInUser">Logged In: </p>
+              <button type="button" id="logoutBtn" class="btn btn-outline-secondary" onclick="logout()">Logout</button>
+            </li>
           </ul>
         </div>
         <a id="home" href="index.html">Chameleon Artist Spy</a>
