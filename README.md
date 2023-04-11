@@ -273,3 +273,13 @@ Declarations:
 - Hamburger menus are harder than I would have thought
 - I definitely looked up some code, but I feel like I was able to innovate and make the website look how I want it to
 - Using hamburger menu everywhere b/c project is mobile first, and I don't need to overcomplicate navigation with how much is left to accomplish
+## JavaScript:
+- Requirement i: Logged in users can create custom sets and add to them, adding these sets to a mock database in localstorage
+- Requirement ii: Once logged in, the user can see their name displayed in the hamburger navigation menu, along with a button to log out
+- Requirement iii: The tables displayed all get their content from injected data into the DOM, including custom sets
+- Requirement iv: All of the mock database data is stored in localstorage, along with info about the current user, the current player name, and much more
+- Requirement v: The information provided in game when clicking "View My Knowledge" or "Start Round" will be distributed using WebSocket so all players can see the shared secret word (with the exception of the spy). This will pop up once a new round has started.
+- The website is functional! Even if it's a little jank because it's all using local storage instead of a database... the word is randomly selected, the spies are randomly selected, it works!
+- If trying to test it out, be aware that you will have to reset the PlayerName to be the same as the host in order to trigger a new round with a new word and different spies
+- Things get complex real fast
+- JSON objects not keeping class functionality when pulled from localstorage is annoying
