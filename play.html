@@ -5,8 +5,14 @@
     <!-- Tell browsers not to scale the viewport automatically -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Play</title>
-    <script src="sets"></script>
+    <script src="sets.js"></script>
     <script src="game.js"></script>
+    <script>
+      window.onload = function() {
+        pageSetup();
+        hostDisplay('startRoundBtn', true);
+      }
+    </script>
     <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet" href="main.css" />
     <link
@@ -74,79 +80,16 @@
     <main class="container-fluid text-center">
       <br>
       <h1 id="gameName" class="rainbow-text">Game Room</h1>
-      <p id="roomCode">Room Code: Unknown</p>
+      <p id="roomCode">Room Code: </p>
       <div class="rowCluster">
-        <p>Game Status: Round Ongoing</p>
-        <button type="button" class="btn btn-outline-secondary">View Your Knowledge</button>
+        <button type="button" class="btn btn-outline-info" onclick="viewKnowledge()">View Your Knowledge</button>
+        <button type="button" class="btn btn-outline-success" onclick="startRound()" id="startRoundBtn">Start New Round</button>
       </div>
       <div class="rowCluster">
-        <table id="player-table" class="table table-success table-striped">
-          <thead class="table-dark">
-            <tr>
-              <th>Players</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>John Green (Host)</td>
-            </tr>
-            <tr>
-              <td>Unknown Person (You)</td>
-            </tr>
-            <tr>
-              <td>Dan Wells</td>
-            </tr>
-            <tr>
-              <td>Jason Snell</td>
-            </tr>
-            <tr>
-              <td>Myke Hurley</td>
-            </tr>
-          </tbody>
-        </table>
-        
-        <!-- <p>Chosen Set: Animals</p>
-        <ul>
-          <li>Dog</li>
-          <li>Cat</li>
-          <li>Pig</li>
-          <li>Rabbit</li>
-          <li>Hamster</li>
-        </ul> -->
+        <div id="player-table"></div>
         <div>
-          <table id="play-set-table" class="table table-info table-striped">
-            <thead class="table-dark">
-              <tr>
-                <th>Current Set: Animals</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Pig</td>
-              </tr>
-              <tr>
-                <td>Duck</td>
-              </tr>
-              <tr>
-                <td>Cat</td>
-              </tr>
-              <tr>
-                <td>Rabbit</td>
-              </tr>
-              <tr>
-                <td>Snail</td>
-              </tr>
-              <tr>
-                <td>Turtle</td>
-              </tr>
-              <tr>
-                <td>Fish</td>
-              </tr>
-              <tr>
-                <td>Squirrel</td>
-              </tr>
-            </tbody>
-          </table>
+          <p>Current Set:</p>
+          <div id="play-set-table"></div>
         </div>
       </div>
     </main>

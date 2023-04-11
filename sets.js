@@ -65,7 +65,7 @@ function selectTable(tableID) {
 
 function table(tableID, dataKey, data) {
 
-  if (!!data && data.length > 1) {
+  if (!!data && data.length >= 1) {
     const tableElement = generateTable(dataKey, data);
 
     const output = document.getElementById(tableID);
@@ -84,7 +84,12 @@ function table(tableID, dataKey, data) {
 function generateTable(header, data) {
   const tableElement = document.createElement("table");
   tableElement.classList.add("table");
-  tableElement.classList.add("table-info");
+  if (header === 'Players') {
+    tableElement.classList.add("table-success")
+  }
+  else {
+    tableElement.classList.add("table-info");
+  }
   tableElement.classList.add("table-striped");
 
   generateHeader(header, tableElement);
