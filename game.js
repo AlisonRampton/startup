@@ -1,3 +1,4 @@
+
 class Game {
   chosenWord;
   code;
@@ -50,8 +51,8 @@ if (localStorage.getItem("Games") === null){
 }
 
 
-function startGame(form) {
-  GameDatabase = new Map(Object.entries(JSON.parse(localStorage.getItem("Games"))));
+async function startGame(form) {
+  // GameDatabase = new Map(Object.entries(JSON.parse(localStorage.getItem("Games"))));
   const room = form.roomName.value;
   const set = form.displaySet.value;
   const host = form.name.value;
@@ -61,10 +62,17 @@ function startGame(form) {
     publicSet = false;
   }
   let newGame = new Game(room, host, set, publicSet, numSpies);
-  GameDatabase.set(newGame.code, newGame);
+  try {
+    console.log("CHEESE!");
+    await fetch('http://localhost:3000/api/host', {method: 'POST', body: JSON.stringify(newGame)});
+  }
+  catch(error) {
+    console.log(`Oh noes! Error: ${error.message}`);
+  }
+  // GameDatabase.set(newGame.code, newGame);
   localStorage.setItem("CurrGame", newGame.code);
   localStorage.setItem("PlayerName", host);
-  localStorage.setItem("Games", JSON.stringify(Object.fromEntries(GameDatabase)));
+  // localStorage.setItem("Games", JSON.stringify(Object.fromEntries(GameDatabase)));
 
   
 
@@ -87,11 +95,17 @@ function startRound() {
 }
 
 
-function hostDisplay(elementID, desiredStatus) {
-  GameDatabase = new Map(Object.entries(JSON.parse(localStorage.getItem("Games"))));
+async function hostDisplay(elementID, desiredStatus) {
+  // GameDatabase = new Map(Object.entries(JSON.parse(localStorage.getItem("Games"))));
   let roomCode = localStorage.getItem("CurrGame");
   let playerName = localStorage.getItem("PlayerName");
-  let game = GameDatabase.get(roomCode);
+  let game;
+  try {
+    game = await fetch(`http://localhost:3000/api/in-game?code=${roomCode}`);
+  }
+  catch(error) {
+    console.log(`Oh noes! Error: ${error.message}`);
+  }
   if ((game.host === playerName) === desiredStatus) {
     document.getElementById(elementID).style.display = 'inline-block';
   }
@@ -101,11 +115,17 @@ function hostDisplay(elementID, desiredStatus) {
 }
 
 
-function viewKnowledge() {
-  GameDatabase = new Map(Object.entries(JSON.parse(localStorage.getItem("Games"))));
+async function viewKnowledge() {
+  // GameDatabase = new Map(Object.entries(JSON.parse(localStorage.getItem("Games"))));
   let roomCode = localStorage.getItem("CurrGame");
   let playerName = localStorage.getItem("PlayerName");
-  let game = GameDatabase.get(roomCode);
+  let game;
+  try {
+    game = await fetch(`http://localhost:3000/api/in-game?code=${roomCode}`);
+  }
+  catch(error) {
+    console.log(`Oh noes! Error: ${error.message}`);
+  }
   if (game.spies && game.spies.includes(playerName)) {
     window.alert("You are the spy");
   }
@@ -114,10 +134,16 @@ function viewKnowledge() {
   }
 }
 
-function pageSetup() {
-  GameDatabase = new Map(Object.entries(JSON.parse(localStorage.getItem("Games"))));
+async function pageSetup() {
+  // GameDatabase = new Map(Object.entries(JSON.parse(localStorage.getItem("Games"))));
   let roomCode = localStorage.getItem("CurrGame");
-  let game = GameDatabase.get(roomCode);
+  let game;
+  try {
+    game = await fetch(`http://localhost:3000/api/in-game?code=${roomCode}`);
+  }
+  catch(error) {
+    console.log(`Oh noes! Error: ${error.message}`);
+  }
   let roomNode = document.createTextNode(game.name);
   const roomElem = document.getElementById('gameName')
   roomElem.appendChild(roomNode);
@@ -129,16 +155,16 @@ function pageSetup() {
 }
 
 function joinGame(form) {
-  GameDatabase = new Map(Object.entries(JSON.parse(localStorage.getItem("Games"))));
+  // GameDatabase = new Map(Object.entries(JSON.parse(localStorage.getItem("Games"))));
   const roomCode = form.roomCode.value;
   const name = form.name.value;
   
-  let game = GameDatabase.get(roomCode);
-  game.players.push(name);
-  GameDatabase.delete(roomCode);
-  GameDatabase.set(roomCode, game);
+  addPlayerToGame(roomCode, name);
+  // game.players.push(name);
+  // GameDatabase.delete(roomCode);
+  // GameDatabase.set(roomCode, game);
 
   localStorage.setItem("CurrGame", roomCode);
   localStorage.setItem("PlayerName", name);
-  localStorage.setItem("Games", JSON.stringify(Object.fromEntries(GameDatabase)));
+  // localStorage.setItem("Games", JSON.stringify(Object.fromEntries(GameDatabase)));
 }

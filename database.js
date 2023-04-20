@@ -12,19 +12,40 @@ const url = `mongodb+srv://${userName}:${password}@${hostname}`;
 
 const client = new MongoClient(url);
 const gameCollection = client.db('fakeartist').collection('games');
+const db = client.db('games');
 
-function startGame(game) {
+(async function testConnection() {
+  await client.connect();
+  await db.command({ ping: 1 });
+})().catch((ex) => {
+  console.log(`Unable to connect to database with ${url} because ${ex.message}`);
+  process.exit(1);
+});
+
+async function storeNewGame(game) {
   gameCollection.insertOne(game);
 }
 
-function getHighScores() {
-  const query = {score: {$gt: 0}};
-  const options = {
-    sort: {score: -1},
-    limit: 10,
-  };
-  const cursor = scoreCollection.find(query, options);
-  return cursor.toArray();
+async function getGame(code) {
+  console.log(code);
+  const query = {'code': parseInt(code)};
+  const cursor = await gameCollection.find(query);
+  // console.log(await cursor.toArray());
+  const game = await cursor.toArray();
+  console.log(game);
+  return game;
 }
 
-module.exports = {addScore, getHighScores};
+async function addPlayerToGame(code, playerName) {
+  const query = {code: code};
+  const options = {
+    $push: {players: playerName}
+  };
+  const result = await gameCollection.updateOne(query, options);
+}
+
+function main() {
+  console.log('I love you!');
+}
+
+module.exports = {getGame, addPlayerToGame, storeNewGame};
