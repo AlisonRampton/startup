@@ -283,3 +283,8 @@ Declarations:
 - If trying to test it out, be aware that you will have to reset the PlayerName to be the same as the host in order to trigger a new round with a new word and different spies
 - Things get complex real fast
 - JSON objects not keeping class functionality when pulled from localstorage is annoying
+# Service
+- API endpoints kind of work?
+- nodemon is amazing
+- Can pass args in through request body or through url
+- I am very confused, but that is ok
